@@ -1,0 +1,4 @@
+// Show the last heartbeat sent by each computer
+Heartbeat 
+| where ResourceGroup == "DeploymentForReps-RG" 
+| summarize arg_max(TimeGenerated, *) by Computer
