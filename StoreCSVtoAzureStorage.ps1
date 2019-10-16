@@ -24,6 +24,7 @@ try
     $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
 
     "Logging in to Azure..."
+"***************************************************"
     Connect-AzAccount `
         -ServicePrincipal `
         -TenantId $servicePrincipalConnection.TenantId `
@@ -43,21 +44,24 @@ catch {
 }
 
 "Displaying all delegated Azure subscriptions"
+"***************************************************"
 Get-AzSubscription
 
 "Setting the Context of Azure Subscription in this Session for Republicans..."
+"*********************************************************************************"
 Set-AzContext -SubscriptionId $CustomerSubscriptionID
 
 "Putting all the deallocated VMs in a CSV File"
-
+"*********************************************************************************"
 #create a CSV in temp
 $GetDate = Get-Date -Format "MM-dd-yyyy_HH_mm_ss"
 $FileName = "DeallocatedVMList" + $GetDate + ".csv"
 Get-AzVM -status | Where-Object {$_.PowerState -notlike "VM running"} | Export-Csv -Path $Home\$FileName -NoTypeInformation
 
+"Uploading the CSV to Customer's Azure Storage Blob"
+"**********************************************************************************"
 $storageAccount = Get-AzStorageAccount -StorageAccountName $StorageAccountName -ResourceGroupName $StorageAccountResourceGroupName
 $ctx = $storageAccount.Context
-
 
 # upload a file
 Set-AzStorageBlobContent -File $Home\$FileName `
