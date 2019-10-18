@@ -21,12 +21,12 @@
                 {
                     "principalId": "7966514a-55b2-42a1-b7a2-bc97623be3c2",
                     "principalIdDisplayName": "AzureVMAdmins",
-                    "roleDefinitionId": "36243c78-bf99-498c-9df9-86d9f8d28608"
+                    "roleDefinitionId": "9980e02c-c2be-4d73-94e8-173b1dc7cf3c"
                 },
                 {
                     "principalId": "d7cc4a36-9ba2-4fc8-abc2-2f5848b7e9a3",
                     "principalIdDisplayName": "AzureSecurityAdmins",
-                    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
+                    "roleDefinitionId": "fb1c8493-542b-48eb-b624-b4c8fea62acd"
                 }
                                
             ]
