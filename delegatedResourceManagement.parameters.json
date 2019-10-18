@@ -27,12 +27,8 @@
                     "principalId": "d7cc4a36-9ba2-4fc8-abc2-2f5848b7e9a3",
                     "principalIdDisplayName": "AzureSecurityAdmins",
                     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
-                },
-                {
-                    "principalId": "9fe47fff-5655-4779-b726-2cf02b07c7c7",
-                    "principalIdDisplayName": "Service Automation Account",
-                    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
                 }
+                
                                
             ]
         }
