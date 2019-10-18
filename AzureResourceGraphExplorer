@@ -1,0 +1,4 @@
+Resources
+| where type == 'microsoft.compute/virtualmachines'
+| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
+| project name, SubName
